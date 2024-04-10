@@ -1,5 +1,14 @@
 import { Position, Direction, Instruction } from "../types";
 
+/**
+ * The function `validateCoordinates` parses and validates input coordinates as integers in TypeScript.
+ * @param {string} input - The `validateCoordinates` function takes a string input representing
+ * coordinates in the format "x y". It trims any leading or trailing whitespace, then splits the input
+ * string by a space to extract the x and y values. It parses these values into integers and returns
+ * them as a `Position` object with
+ * @returns The function `validateCoordinates` returns an object of type `Position` with properties `x`
+ * and `y`, which are parsed integers from the input string.
+ */
 export function validateCoordinates(input: string): Position {
   const [x, y] = input.trim().split(" ");
   const parsedX = parseInt(x, 10);
@@ -10,6 +19,17 @@ export function validateCoordinates(input: string): Position {
   return { x: parsedX, y: parsedY };
 }
 
+/**
+ * The function `validatePosition` in TypeScript validates and parses a string input into a Position
+ * object with coordinates and direction.
+ * @param {string} input - The `validatePosition` function takes a string input representing a position
+ * with coordinates (x, y) and a direction. The input is expected to be in the format "x y direction",
+ * where x and y are integers representing the coordinates, and direction is a string representing the
+ * direction (N, E
+ * @returns The function `validatePosition` is returning an object of type `Position` with properties
+ * `x`, `y`, and `direction`. The `x` and `y` properties are parsed integers from the input string, and
+ * the `direction` property is a valid direction value (N, E, S, W) from the input string.
+ */
 export function validatePosition(input: string): Position {
   const [x, y, direction] = input.trim().split(" ");
   const parsedX = parseInt(x, 10);
